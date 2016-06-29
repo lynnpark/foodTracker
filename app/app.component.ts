@@ -14,9 +14,6 @@ import {WasteForm} from '../tracker/waste-form/waste-form';
     template: `
         <header></header>
         <p-tabView>
-            <p-tabPanel header="Food Tracker" leftIcon="fa-area-chart">
-                <food-tracker></food-tracker>
-            </p-tabPanel>
             <p-tabPanel header="Repurposed" leftIcon="fa-recycle">
                 <repurposed-form></repurposed-form>
             </p-tabPanel>
