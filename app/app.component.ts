@@ -3,10 +3,10 @@ import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-
 import {TabView} from 'primeng/primeng';
 import {TabPanel} from 'primeng/primeng';
 import {Header} from './header';
-import {RepurposedForm} from '../tracker/repurposed-form/repurposed-form';
-import {FoodTracker} from '../tracker/food-tracker/food-tracker';
-import {ShortageForm} from '../tracker/shortage-form/shortage-form';
-import {WasteForm} from '../tracker/waste-form/waste-form';
+import {RepurposedForm} from './modules/tracker/repurposed-form/repurposed-form';
+import {FoodTracker} from './modules/tracker/food-tracker/food-tracker';
+import {ShortageForm} from './modules/tracker/shortage-form/shortage-form';
+import {WasteForm} from './modules/tracker/waste-form/waste-form';
 
 
 @Component({
