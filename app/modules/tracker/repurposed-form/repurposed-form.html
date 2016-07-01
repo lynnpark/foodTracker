@@ -1,13 +1,56 @@
+<style>
+    .keypad {
+        width: 182px;
+        border: 0px solid black;
+        display: inline-block;
+    }
+
+    .keybad > button {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+        float: right;
+        text-align: center;
+    }
+</style>
+
+
 <h1>repurposed YO</h1>
 
-<!--
-<form>
-    <div-class="form-group">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" required>
-    </div-class>
-</form>
--->
+<input id="in" type="text" pInputText [(ngModel)] ="itemName" placeholder="Item Name" />
+
+<h2>Quantity</h2>
+<!--<input type="text" placeholder="Enter Quantity" />-->
+<p-dialog [(visible)]="display" modal="modal" showEffect="fade">
+    <header>
+        Enter Qunatity
+    </header>
+    <div class = "keypad">
+        <button class="btn btn-primary select">9</button>
+        <button class="btn btn-primary select">8</button>
+        <button class="btn btn-primary select">7</button>
+        <button class="btn btn-primary select">6</button>
+        <button class="btn btn-primary select">5</button>
+        <button class="btn btn-primary select">4</button>
+        <button class="btn btn-primary select">3</button>
+        <button class="btn btn-primary select">2</button>
+        <button class="btn btn-primary select">1</button>
+        <button class="btn btn-primary select"><</button>
+        <button class="btn btn-primary select">0</button>
+        <button class="btn btn-primary select">.</button>
+    </div>
+    <footer>
+        <button type="button" pButton icon="fa-close" (click)="display=false" label="Exit"></button>
+    </footer>
+</p-dialog>
+
+<button pButton type="text" (click)="showDialog()" label="Quantity"></button>
+
+<p-selectButton [options]="units" [(ngModel)]="unit"></p-selectButton>
+
+<br><br>
+<button pButton type="text" (click)="submitLog()" label="Submit" ></button>
 
 
 

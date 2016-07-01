@@ -26,7 +26,8 @@ import {WasteForm} from './modules/tracker/waste-form/waste-form';
         </p-tabView>
     `,
     directives: [ROUTER_DIRECTIVES, RepurposedForm, ShortageForm, WasteForm, FoodTracker, TabView, TabPanel, Header],
-    providers: [ROUTER_PROVIDERS]
+    providers: [ROUTER_PROVIDERS],
+    styleUrls: ['./app/assets/css/styles.css']
 })
 
 
