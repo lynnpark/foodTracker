@@ -1,11 +1,8 @@
-
-
-
 <h1>repurposed YO</h1>
 
 <input id="in" type="text" pInputText [(ngModel)] ="itemName" placeholder="Item Name" />
 
-<h2>Quantity</h2>
+<h2>
 <p-dialog [(visible)]="display" modal="modal" showEffect="fade">
     <header>
         Enter Qunatity
@@ -25,7 +22,7 @@
         <button class="btn btn-primary select" (click)="keypressed('.')">.</button>
     </div>
     <footer>
-        <button type="button" pButton icon="fa-close" (click)="display=false" label="Exit"></button>
+        <button type="button" pButton icon="fa-check" (click)="display=false" label="Submit"></button>
     </footer>
 </p-dialog>
 
@@ -33,7 +30,8 @@
 
 <p-selectButton [options]="units" [(ngModel)]="unit"></p-selectButton>
 
-<br><br>
+</h2>
+
 <button pButton type="text" (click)="submitLog()" label="Submit" ></button>
 
 
