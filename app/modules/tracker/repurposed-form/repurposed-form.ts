@@ -14,6 +14,7 @@ export class RepurposedForm {
     //TODO instantiate new object of log
     itemName: string;
     unit: string;
+    quantity: number;
 
     units: SelectItem[];
 
@@ -32,5 +33,10 @@ export class RepurposedForm {
 
     showDialog() {
         this.display = true;
+    }
+    
+    keypressed(key) {
+        console.log('Key pressed: ' + key);
+        this.quantity = key;
     }
 }

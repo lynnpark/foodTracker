@@ -25,6 +25,10 @@ var RepurposedForm = (function () {
     RepurposedForm.prototype.showDialog = function () {
         this.display = true;
     };
+    RepurposedForm.prototype.keypressed = function (key) {
+        console.log('Key pressed: ' + key);
+        this.quantity = key;
+    };
     RepurposedForm = __decorate([
         core_1.Component({
             selector: 'repurposed-form',
