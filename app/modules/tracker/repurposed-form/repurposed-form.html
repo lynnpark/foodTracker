@@ -1,6 +1,10 @@
-<h1>repurposed YO</h1>
+<h1>Repurposed Log</h1>
 
 <input id="in" type="text" pInputText [(ngModel)] ="itemName" placeholder="Item Name" />
+
+<div *ngFor = "let menuItem of menu">
+    <button><h4>{{menuItem.name}}</h4></button>
+</div>
 
 <h2>
 <p-dialog [(visible)]="display" modal="modal" showEffect="fade">
@@ -26,7 +30,7 @@
     </footer>
 </p-dialog>
 
-<input id="in" type="text" pInputText [(ngModel)] ="quantity" (click)="showDialog()" placeholder="Enter Quantity" />
+<input id="inQ" type="text" pInputText [(ngModel)] ="quantity" (click)="showDialog()" placeholder="Enter Quantity" />
 
 <p-selectButton [options]="units" [(ngModel)]="unit"></p-selectButton>
 

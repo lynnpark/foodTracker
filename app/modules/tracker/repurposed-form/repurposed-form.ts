@@ -1,6 +1,9 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {InputText, Button, SelectButton, SelectItem, Dialog} from 'primeng/primeng';
 //import {Log} from './app/modules/tracker/log';
+
+import {MenuItem} from '../menuItem';
+import {MenuItemService} from '../menuItem.service';
 
 @Component({
     selector: 'repurposed-form',
@@ -9,7 +12,9 @@ import {InputText, Button, SelectButton, SelectItem, Dialog} from 'primeng/prime
     styleUrls: ['./app/assets/css/styles.css']
 })
 
-export class RepurposedForm {
+export class RepurposedForm implements OnInit {
+
+    menu: MenuItem[] = [];
 
     //TODO instantiate new object of log
     itemName: string;
@@ -20,11 +25,17 @@ export class RepurposedForm {
 
     display: boolean = false;
     
-    constructor(){
-        this.units = [];
-        this.units.push({label:'lbs', value:'lbs'});
-        this.units.push({label:'ozs', value:'ozs'});
-        this.units.push({label:'ea', value:'ea'});
+    constructor(
+        private menuItemService: MenuItemService){
+            this.units = [];
+            this.units.push({label:'lbs', value:'lbs'});
+            this.units.push({label:'ozs', value:'ozs'});
+            this.units.push({label:'ea', value:'ea'});
+    }
+
+    ngOnInit() {
+        this.menuItemService.getMenuItems()
+            .then(menu => this.menu = menu);
     }
 
     submitLog(){

@@ -8,18 +8,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var mock_menu_data_1 = require('./mock-menu-data');
 var core_1 = require('@angular/core');
-var ShortageForm = (function () {
-    function ShortageForm() {
+var MenuItemService = (function () {
+    function MenuItemService() {
     }
-    ShortageForm = __decorate([
-        core_1.Component({
-            selector: 'shortage-form',
-            templateUrl: './app/modules/tracker/shortage-form/shortage-form.html'
-        }), 
+    MenuItemService.prototype.getMenuItems = function () {
+        return Promise.resolve(mock_menu_data_1.MENU);
+    };
+    MenuItemService.prototype.getMenuItem = function (id) {
+        return this.getMenuItems().then(function (menu) { return menu.filter(function (menuItem) { return menuItem.id === id; })[0]; });
+    };
+    MenuItemService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], ShortageForm);
-    return ShortageForm;
+    ], MenuItemService);
+    return MenuItemService;
 }());
-exports.ShortageForm = ShortageForm;
-//# sourceMappingURL=shortage-form.js.map
+exports.MenuItemService = MenuItemService;
+//# sourceMappingURL=menuItem.service.js.map

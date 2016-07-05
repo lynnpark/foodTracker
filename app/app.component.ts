@@ -8,6 +8,8 @@ import {FoodTracker} from './modules/tracker/food-tracker/food-tracker';
 import {ShortageForm} from './modules/tracker/shortage-form/shortage-form';
 import {WasteForm} from './modules/tracker/waste-form/waste-form';
 
+import {MenuItemService} from './modules/tracker/menuItem.service';
+
 
 @Component({
     selector: 'my-app',
@@ -26,7 +28,7 @@ import {WasteForm} from './modules/tracker/waste-form/waste-form';
         </p-tabView>
     `,
     directives: [ROUTER_DIRECTIVES, RepurposedForm, ShortageForm, WasteForm, FoodTracker, TabView, TabPanel, Header],
-    providers: [ROUTER_PROVIDERS],
+    providers: [ROUTER_PROVIDERS, MenuItemService],
     styleUrls: ['./app/assets/css/styles.css']
 })
 
