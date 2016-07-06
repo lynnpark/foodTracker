@@ -9,11 +9,10 @@ import {MenuItemService} from '../menuItem.service';
     selector: 'repurposed-form',
     templateUrl: './app/modules/tracker/repurposed-form/repurposed-form.html',
     directives: [InputText, Button, SelectButton, Dialog],
-    styleUrls: ['./app/assets/css/styles.css']
+    //styleUrls: ['./app/assets/css/styles.css']
 })
 
 export class RepurposedForm implements OnInit {
-
     menu: MenuItem[] = [];
 
     //TODO instantiate new object of log
@@ -40,6 +39,7 @@ export class RepurposedForm implements OnInit {
 
     submitLog(){
         console.log(this.itemName);
+        console.log(this.quantity + " " + this.unit);
     }
 
     showDialog() {
@@ -50,4 +50,10 @@ export class RepurposedForm implements OnInit {
         console.log('Key pressed: ' + key);
         this.quantity = key;
     }
+
+    itemButtonClick(name) {
+        console.log(name);
+        this.itemName = name;
+    }
+
 }

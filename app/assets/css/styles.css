@@ -12,7 +12,7 @@ header {
 .keypad {
     width: 182px;
     border: 0px solid black;
-    display: inline-block;
+
 }
 
 .keybad > button {

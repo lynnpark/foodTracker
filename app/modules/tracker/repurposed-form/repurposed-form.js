@@ -28,6 +28,7 @@ var RepurposedForm = (function () {
     };
     RepurposedForm.prototype.submitLog = function () {
         console.log(this.itemName);
+        console.log(this.quantity + " " + this.unit);
     };
     RepurposedForm.prototype.showDialog = function () {
         this.display = true;
@@ -36,12 +37,15 @@ var RepurposedForm = (function () {
         console.log('Key pressed: ' + key);
         this.quantity = key;
     };
+    RepurposedForm.prototype.itemButtonClick = function (name) {
+        console.log(name);
+        this.itemName = name;
+    };
     RepurposedForm = __decorate([
         core_1.Component({
             selector: 'repurposed-form',
             templateUrl: './app/modules/tracker/repurposed-form/repurposed-form.html',
             directives: [primeng_1.InputText, primeng_1.Button, primeng_1.SelectButton, primeng_1.Dialog],
-            styleUrls: ['./app/assets/css/styles.css']
         }), 
         __metadata('design:paramtypes', [menuItem_service_1.MenuItemService])
     ], RepurposedForm);

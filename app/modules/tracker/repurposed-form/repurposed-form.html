@@ -1,16 +1,24 @@
-<h1>Repurposed Log</h1>
-
-<input id="in" type="text" pInputText [(ngModel)] ="itemName" placeholder="Item Name" />
-
-<div *ngFor = "let menuItem of menu">
-    <button><h4>{{menuItem.name}}</h4></button>
+<div class="ui-g">
+    <div class="ui-g-8 ui-g-nopad">
+        <div class="ui-g-8">
+            <h1>Repurposed Log</h1>
+        </div>
+        <div class="ui-g-8">
+            <h2>
+                <input id="in" type="text" pInputText [(ngModel)] ="itemName" placeholder="Item Name" />
+                <i class = "fa-search"></i>
+            </h2>
+            <button pButton type="button" *ngFor="let menuItem of menu" (click)="itemButtonClick(menuItem.name)" label="{{menuItem.name}}"></button>
+        </div>
+    </div>
+    <div class="ui-g-4">
+        <h2>Day Produced</h2>
+    </div>
 </div>
 
 <h2>
+
 <p-dialog [(visible)]="display" modal="modal" showEffect="fade">
-    <header>
-        Enter Qunatity
-    </header>
     <div class = "keypad">
         <button class="btn btn-primary select" (click)="keypressed(9)">9</button>
         <button class="btn btn-primary select" (click)="keypressed(8)">8</button>
@@ -31,10 +39,9 @@
 </p-dialog>
 
 <input id="inQ" type="text" pInputText [(ngModel)] ="quantity" (click)="showDialog()" placeholder="Enter Quantity" />
-
 <p-selectButton [options]="units" [(ngModel)]="unit"></p-selectButton>
-
 </h2>
+
 
 <button pButton type="text" (click)="submitLog()" label="Submit" ></button>
 
