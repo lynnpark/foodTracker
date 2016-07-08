@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {InputText, Button, SelectButton, SelectItem, Dialog} from 'primeng/primeng';
-//import {Log} from './app/modules/tracker/log';
 
 import {MenuItem} from '../menuItem';
 import {MenuItemService} from '../menuItem.service';
