@@ -13,7 +13,7 @@ export var LOGS: Log[] = [
     },
     {
         id: 1,
-        dateTime: new Date(2012, 0, 3, 5, 7, 1, 467),// 1 Jan 2011, 02:03:04.567 in local timezone
+        dateTime: new Date(2012, 0, 3, 5, 7, 1, 467),
         formType: 'repurposed',
         itemName: 'Filet Mignon',
         itemType: 'menu',
