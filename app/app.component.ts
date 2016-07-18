@@ -7,6 +7,7 @@ import {RepurposedForm} from './modules/tracker/repurposed-form/repurposed-form'
 import {FoodTracker} from './modules/tracker/food-tracker/food-tracker';
 import {ShortageForm} from './modules/tracker/shortage-form/shortage-form';
 import {WasteForm} from './modules/tracker/waste-form/waste-form';
+import {LogsTable} from './modules/reporting/view-logs/logs-table';
 
 import {MenuItemService} from './modules/tracker/menuItem.service';
 
@@ -25,9 +26,12 @@ import {MenuItemService} from './modules/tracker/menuItem.service';
             <p-tabPanel header="Shortage" leftIcon="fa-battery-empty">
                 <shortage-form></shortage-form>
             </p-tabPanel>
+            <p-tabPanel header="Logs">
+                <logs-table></logs-table>
+            </p-tabPanel>
         </p-tabView>
     `,
-    directives: [ROUTER_DIRECTIVES, RepurposedForm, ShortageForm, WasteForm, FoodTracker, TabView, TabPanel, Header],
+    directives: [ROUTER_DIRECTIVES, RepurposedForm, ShortageForm, WasteForm, FoodTracker, TabView, TabPanel, Header, LogsTable],
     providers: [ROUTER_PROVIDERS, MenuItemService],
     styleUrls: ['./app/assets/css/styles.css']
 })
@@ -36,4 +40,6 @@ import {MenuItemService} from './modules/tracker/menuItem.service';
 
 export class AppComponent {
 
+    
+    
 }

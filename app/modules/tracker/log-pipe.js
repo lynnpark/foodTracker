@@ -1,3 +1,18 @@
+/*
+import {Pipe, PipeTransform} from '@angular/core';
+
+@Pipe({
+    name: 'orderBy'
+})
+
+export class OrderBy implements PipeTransform {
+
+    transform(input:any, args:string[]) : any {
+        //todo
+
+        return input;
+    }
+}*/
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -8,22 +23,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var mock_menu_data_1 = require('./mock-menu-data');
 var core_1 = require('@angular/core');
-var MenuItemService = (function () {
-    function MenuItemService() {
+var LogPipe = (function () {
+    function LogPipe() {
     }
-    MenuItemService.prototype.getMenuItems = function () {
-        return Promise.resolve(mock_menu_data_1.MENU);
+    LogPipe.prototype.transform = function (array, args) {
+        array.sort(function (a, b) {
+            if (a < b) {
+                return -1;
+            }
+            else if (a > b) {
+                return 1;
+            }
+            else {
+                return 0;
+            }
+        });
+        return array;
     };
-    MenuItemService.prototype.getMenuItem = function (id) {
-        return this.getMenuItems().then(function (menu) { return menu.filter(function (menuItem) { return menuItem.id === id; })[0]; });
-    };
-    MenuItemService = __decorate([
-        core_1.Injectable(), 
+    LogPipe = __decorate([
+        core_1.Pipe({
+            name: "orderby"
+        }), 
         __metadata('design:paramtypes', [])
-    ], MenuItemService);
-    return MenuItemService;
+    ], LogPipe);
+    return LogPipe;
 }());
-exports.MenuItemService = MenuItemService;
-//# sourceMappingURL=menuItem.service.js.map
+exports.LogPipe = LogPipe;
+//# sourceMappingURL=log-pipe.js.map

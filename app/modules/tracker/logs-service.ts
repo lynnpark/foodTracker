@@ -1,10 +1,10 @@
-import {Log} from './logs';
+import {Log} from './log';
 import {LOGS} from './mock-log-data';
 import {Injectable} from '@angular/core';
 
 @Injectable()
 export class LogsService {
-    
+
     getLogs() {
         return Promise.resolve(LOGS);
     }

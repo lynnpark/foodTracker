@@ -8,22 +8,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var mock_menu_data_1 = require('./mock-menu-data');
+var mock_log_data_1 = require('./mock-log-data');
 var core_1 = require('@angular/core');
-var MenuItemService = (function () {
-    function MenuItemService() {
+var LogsService = (function () {
+    function LogsService() {
     }
-    MenuItemService.prototype.getMenuItems = function () {
-        return Promise.resolve(mock_menu_data_1.MENU);
+    LogsService.prototype.getLogs = function () {
+        return Promise.resolve(mock_log_data_1.LOGS);
     };
-    MenuItemService.prototype.getMenuItem = function (id) {
-        return this.getMenuItems().then(function (menu) { return menu.filter(function (menuItem) { return menuItem.id === id; })[0]; });
+    LogsService.prototype.getLog = function (id) {
+        return this.getLogs().then(function (logs) { return logs.filter(function (log) { return log.id === id; })[0]; });
     };
-    MenuItemService = __decorate([
+    LogsService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], MenuItemService);
-    return MenuItemService;
+    ], LogsService);
+    return LogsService;
 }());
-exports.MenuItemService = MenuItemService;
-//# sourceMappingURL=menuItem.service.js.map
+exports.LogsService = LogsService;
+//# sourceMappingURL=logs-service.js.map

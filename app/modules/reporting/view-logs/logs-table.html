@@ -1,5 +1,36 @@
+<!--
 <ul>
     <li *ngFor="let log of logs">
-        {{ log }}
+        {{ log.itemName }}
     </li>
-</ul>
+</ul>-->
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Form</th>
+        <th>Item Type</th>
+        <th>Quantity</th>
+        <th>Unit</th>
+        <th>Date</th>
+        <th>Loss Reason</th>
+        <th></th>
+    </tr>
+
+    <tr *ngFor="let log of logs">
+        <td>{{ log.itemName }}</td>
+        <td>{{ log.formType }}</td>
+        <td>{{ log.itemType }}</td>
+        <td>{{ log.quantity }}</td>
+        <td>{{ log.unit }}</td>
+        <td>{{ log.dateTime.getFullYear() }} / {{ log.dateTime.getMonth()+1 }} / {{ log.dateTime.getDate() }}</td>
+        <td>{{ log.lossReason }}</td>
+        <td>
+            <p-dialog [(visible)]="display" modal="modal" showEffect="fade">
+                <input pInputText [(ngModel)]="log.itemName" placeholder= "log.itemName">
+            </p-dialog>
+            <button pButton type="text" (click)="showDialog()" label="Edit" ></button>
+        </td>
+    </tr>
+
+</table>
