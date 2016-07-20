@@ -19,6 +19,12 @@ export class LogsTable implements OnInit {
     logs: Log[];
 
     display: boolean = false;
+    
+    currentLog: Log;
+    currentItemName: string;
+    currentQuantity: number;
+    currentUnit: string;
+    currentLossReason: string;
 
     constructor(private logsService: LogsService) { }
 
@@ -30,7 +36,20 @@ export class LogsTable implements OnInit {
         this.getLogs();
     }
 
-    showDialog() {
+    showDialog(log: Log) {
+        this.currentLog = log;
+        this.currentItemName = log.itemName;
+        this.currentQuantity = log.quantity;
+        this.currentUnit = log.unit;
+        this.currentLossReason = log.lossReason;
         this.display = true;
+    }
+
+    submitEdit(){
+        this.currentLog.itemName = this.currentItemName;
+        this.currentLog.quantity = this.currentQuantity;
+        this.currentLog.unit = this.currentUnit;
+        this.currentLog.lossReason = this.currentLossReason;
+        this.display=false;
     }
 }

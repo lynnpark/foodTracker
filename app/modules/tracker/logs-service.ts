@@ -12,4 +12,8 @@ export class LogsService {
     getLog(id: number) {
         return this.getLogs().then(logs => logs.filter(log =>log.id === id)[0]);
     }
+
+/*    updateLog(log) {
+        this.getLog(log.id).itemName = log.itemName;
+    }*/
 }

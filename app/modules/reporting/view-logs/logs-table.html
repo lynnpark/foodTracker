@@ -27,9 +27,15 @@
         <td>{{ log.lossReason }}</td>
         <td>
             <p-dialog [(visible)]="display" modal="modal" showEffect="fade">
-                <input pInputText [(ngModel)]="log.itemName" placeholder= "log.itemName">
+                <input pInputText [(ngModel)]="currentItemName" placeholder="currentItemName">
+                <input pInputText [(ngModel)]="currentQuantity" placeholder= "currentQuantity">
+                <input pInputText [(ngModel)]="currentUnit" placeholder= "currentUnit">
+                <input pInputText [(ngModel)]="currentLossReason" placeholder= "currentLossReason">
+                <footer>
+                    <button pButton (click)="submitEdit()" label="Submit"></button>
+                </footer>
             </p-dialog>
-            <button pButton type="text" (click)="showDialog()" label="Edit" ></button>
+            <button pButton type="text" (click)="showDialog(log)" label="Edit" ></button>
         </td>
     </tr>
 
