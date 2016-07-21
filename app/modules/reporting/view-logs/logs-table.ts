@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {Log} from '../../tracker/log';
 
 import {LogsService} from '../../tracker/logs-service';
-
 import {InputText, Button, SelectButton, SelectItem, Dialog} from 'primeng/primeng';
 
 // log has 8 objects
@@ -33,6 +32,22 @@ export class LogsTable implements OnInit {
     }
 
     ngOnInit(){
+        this.getLogs();
+    }
+
+    sortBy(criteria: string){
+        this.logs.sort(function(a, b){
+            if(a[criteria] < b[criteria]) return -1;
+            if(a[criteria] > b[criteria]) return 1;
+            return 0;
+        });
+    }
+
+    filterByForm(criteria: string) {
+        this.logs = this.logs.filter(log =>log.formType === criteria);
+    }
+
+    removeFilter(){
         this.getLogs();
     }
 

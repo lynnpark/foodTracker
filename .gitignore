@@ -1,0 +1,22 @@
+# Transpiled files
+app/**/*.js
+app/**/*.map
+
+# Logs
+/logs
+*.log
+
+# Dependency directory
+node_modules
+typings
+jspm_packages
+bower_components
+
+# IDE configuration files
+/.idea
+
+# Test Folder
+/test
+
+# Temporary Files
+/tmp

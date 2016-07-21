@@ -1,9 +1,17 @@
-<!--
-<ul>
-    <li *ngFor="let log of logs">
-        {{ log.itemName }}
-    </li>
-</ul>-->
+<h3>sort by:</h3>
+<button pButton (click)="sortBy('itemName')" label="Item Name"></button>
+<button pButton (click)="sortBy('unit')" label="Unit"></button>
+<button pButton (click)="sortBy('formType')" label="Form Type"></button>
+<button pButton (click)="sortBy('quantity')" label="Quantity"></button>
+<button pButton (click)="sortBy('unit')" label="Unit"></button>
+<button pButton (click)="sortBy('dateTime')" label="Date"></button>
+<button pButton (click)="sortBy('lossReason')" label="Loss Reason"></button>
+<br>
+<h3>filter by:</h3>
+<button pButton (click)="filterByForm('waste')" label="Waste"></button>
+<button pButton (click)="filterByForm('repurposed')" label="Repurposed"></button>
+<button pButton (click)="filterByForm('shortage')" label="Shortage"></button>
+<button pButton (click)="removeFilter()" label="Remove Filter"></button>
 
 <table>
     <tr>
@@ -27,6 +35,9 @@
         <td>{{ log.lossReason }}</td>
         <td>
             <p-dialog [(visible)]="display" modal="modal" showEffect="fade">
+                <header>
+                    Edit Log
+                </header>
                 <input pInputText [(ngModel)]="currentItemName" placeholder="currentItemName">
                 <input pInputText [(ngModel)]="currentQuantity" placeholder= "currentQuantity">
                 <input pInputText [(ngModel)]="currentUnit" placeholder= "currentUnit">
