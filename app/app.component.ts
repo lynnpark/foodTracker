@@ -16,8 +16,7 @@ import {MenuItemService} from './modules/tracker/menuItem.service';
     selector: 'my-app',
     template: `
         <header></header>
-        <!--<p-tabView orientation="left">-->
-        <p-tabView>
+        <p-tabView orientation="left">
             <p-tabPanel header="Repurposed" leftIcon="fa-recycle">
                 <repurposed-form></repurposed-form>
             </p-tabPanel>
@@ -40,7 +39,5 @@ import {MenuItemService} from './modules/tracker/menuItem.service';
 
 
 export class AppComponent {
-
-    
     
 }

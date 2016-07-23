@@ -4,14 +4,16 @@ import {Log} from '../../tracker/log';
 import {LogsService} from '../../tracker/logs-service';
 import {InputText, Button, SelectButton, SelectItem, Dialog} from 'primeng/primeng';
 
+import {LogPipe} from '../../tracker/log-pipe';
+
 // log has 8 objects
 
 @Component({
     selector: 'logs-table',
     templateUrl: './app/modules/reporting/view-logs/logs-table.html',
     directives: [Button, Dialog],
-    providers: [LogsService]
-    
+    providers: [LogsService],
+    pipes: [LogPipe]
 })
 
 export class LogsTable implements OnInit {
@@ -33,6 +35,7 @@ export class LogsTable implements OnInit {
 
     ngOnInit(){
         this.getLogs();
+        console.log("init logs table");
     }
 
     sortBy(criteria: string){
