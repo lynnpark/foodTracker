@@ -3,6 +3,8 @@ import {InputText, Button, SelectButton, SelectItem, Dialog} from 'primeng/prime
 import {MenuItem} from '../menuItem';
 import {MenuItemService} from '../menuItem.service';
 
+import {Fieldset} from 'primeng/primeng';
+
 @Component({
     selector: 'repurposed-form',
     templateUrl: './app/modules/tracker/repurposed-form/repurposed-form.html',

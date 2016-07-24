@@ -25,7 +25,8 @@
         <th></th>
     </tr>
 
-    <tr *ngFor="let log of logs | orderby itemName">
+    <!--<tr *ngFor="let log of logs | orderby itemName">-->
+    <tr *ngFor="let log of logs">
         <td>{{ log.itemName }}</td>
         <td>{{ log.formType }}</td>
         <td>{{ log.itemType }}</td>

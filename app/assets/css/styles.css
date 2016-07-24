@@ -63,7 +63,7 @@ body {
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
 }
-.btn {
+/*.btn {
     border-radius: 7px;
     background-color:#537ea6;
     border-color:#0066FF;
@@ -82,7 +82,7 @@ body {
     border-color:#0066FF;
     color: #FFF;
     font-weight:500;
-}
+}*/
 .form-control {
     width: 30%;
     margin: 5px;
