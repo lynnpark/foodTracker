@@ -20,12 +20,12 @@ import {MenuItemService} from './modules/tracker/menuItem.service';
             <p-tabPanel header="Repurposed" leftIcon="fa-recycle">
                 <repurposed-form></repurposed-form>
             </p-tabPanel>
-            <p-tabPanel header="Waste" leftIcon="fa-trash-o">
+            <!--<p-tabPanel header="Waste" leftIcon="fa-trash-o">
                 <waste-form></waste-form>
             </p-tabPanel>
             <p-tabPanel header="Shortage" leftIcon="fa-battery-empty">
                 <shortage-form></shortage-form>
-            </p-tabPanel>
+            </p-tabPanel>-->
             <p-tabPanel header="Logs">
                 <logs-table></logs-table>
             </p-tabPanel>

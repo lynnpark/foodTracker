@@ -9,16 +9,19 @@ import {Fieldset} from 'primeng/primeng';
     selector: 'repurposed-form',
     templateUrl: './app/modules/tracker/repurposed-form/repurposed-form.html',
     directives: [InputText, Button, SelectButton, Dialog],
-    //styleUrls: ['./app/assets/css/styles.css']
+    styleUrls: ['./app/assets/css/styles.css']
 })
 
 export class RepurposedForm implements OnInit {
     menu: MenuItem[] = [];
-
-    //TODO instantiate new object of log
+    
     itemName: string;
     unit: string;
+    tempQ: string = '';
     quantity: number;
+    
+    pageone: boolean = true;
+    pagetwo: boolean = false;
 
     units: SelectItem[];
 
@@ -48,12 +51,47 @@ export class RepurposedForm implements OnInit {
     
     keypressed(key) {
         console.log('Key pressed: ' + key);
-        this.quantity = key;
+
+        if(key.toString().localeCompare("<") == 0) {
+            this.tempQ = this.tempQ.slice(0, -1);
+        }
+        else if(key.toString().localeCompare(".") == 0){
+            if(this.tempQ.indexOf(".") == -1)
+                this.tempQ += key;
+        }
+        else if(key == 0){
+            if(this.tempQ != '0')
+                this.tempQ += key;
+        }
+        else {
+            this.tempQ += key;
+        }
+
+        this.quantity = Number(this.tempQ);
+        console.log(this.quantity);
+
+        return false;
+    }
+
+    submitQuantity() {
+        this.display = false;
+        this.quantity = Number(this.tempQ);
+        console.log(this.quantity);
     }
 
     itemButtonClick(name) {
         console.log(name);
         this.itemName = name;
+    }
+
+    nextPage(){
+        this.pageone = false;
+        this.pagetwo = true;
+    }
+    
+    prevPage() {
+        this.pageone = true;
+        this.pagetwo = false;
     }
 
 }
