@@ -1,67 +1,74 @@
-/*
- * Page One
- *
- */
+
 <div *ngIf="pageone==true">
     <div class="ui-g">
-        <div class="ui-g-8">
-            <h2>Select Item</h2>
-            <hr>
-        </div>
-        <div class="ui-g-4">
-            <h3>Repurposed Log</h3>
-        </div>
-
         <div class="ui-g-12">
-            <div class="ui-g-8">
-            <select class="form-control">
-                <option>Today</option>
-                <option>Yesterday</option>
-                <option id="demo"></option>
-            </select>
+            <div class="ui-g-8 ui-g-nopad">
+            <h1>Select Item</h1>
+                <hr>
             </div>
-            <div class="ui-g-4"></div>
-             <h3>
-                <input id="in" type="text" pInputText [(ngModel)] ="itemName" placeholder="Item Name" />
-             </h3>
+
+            <div class="ui-g-4">
+                <button class="navbtn" (click)="nextPage()"><img src="./app/assets/images/next_button.jpg"></button>
+            </div>
 
         </div>
-    </div>
+
+        <select class="form-control">
+            <option>Today</option>
+            <option>Yesterday</option>
+            <option id="demo"></option>
+        </select>
+
+        <select class="form-control">
+            <option>Breakfast</option>
+            <option>Lunch</option>
+            <option>Dinner</option>
+        </select>
+
+        </div>
     <button pButton type="button" class="btn" *ngFor="let menuItem of menu" (click)="itemButtonClick(menuItem.name)" label="{{menuItem.name}}"></button>
-    <br><br><br>
-    <button type="button" (click)="nextPage()"><img src="./app/assets/images/next_button.jpg"></button>
+
 </div>
 
 
-/*
- * Page Two
- *
- */
+
 <div *ngIf="pagetwo==true">
-    <input id="inQ" type="text" pInputText [(ngModel)] ="quantity" />
-    <div class = "keypad">
-        <button class="btn btn-primary select btn-xs" (click)="keypressed('9')">9</button>
-        <button class="btn btn-primary select btn-xs" (click)="keypressed('8')">8</button>
-        <button class="btn btn-primary select btn-xs" (click)="keypressed('7')">7</button>
-        <button class="btn btn-primary select btn-xs" (click)="keypressed('6')">6</button>
-        <button class="btn btn-primary select btn-xs" (click)="keypressed('5')">5</button>
-        <button class="btn btn-primary select btn-xs" (click)="keypressed('4')">4</button>
-        <button class="btn btn-primary select btn-xs" (click)="keypressed('3')">3</button>
-        <button class="btn btn-primary select btn-xs" (click)="keypressed('2')">2</button>
-        <button class="btn btn-primary select btn-xs" (click)="keypressed('1')">1</button>
-        <button class="btn btn-primary select btn-xs" (click)="keypressed('<')"><</button>
-        <button class="btn btn-primary select btn-xs" (click)="keypressed('0')">0</button>
-        <button class="btn btn-primary select btn-xs" (click)="keypressed('.')">.</button>
+
+    <div class = "calculator">
+        <h1 class="content-title">Quantity</h1>
+        <!--<input class="quantityForm" id="quantityForm" placeholder="0" name="quantity" type="text">-->
+        <input class="quantityForm" id="quantityForm" type="text" pInputText [(ngModel)] ="quantity" />
+        <div class="quantityUnit" name="quantityUnit" id="quantityUnit"></div>
+
+        <div class="keypad">
+            <button class="btn btn-primary select calc" onclick="keypressed('1')">1</button>
+            <button class="btn btn-primary select calc" onclick="keypressed('2')">2</button>
+            <button class="btn btn-primary select calc" onclick="keypressed('3')">3</button>
+            <div class="clr"></div>
+            <button class="btn btn-primary select calc" onclick="keypressed('4')">4</button>
+            <button class="btn btn-primary select calc" onclick="keypressed('5')">5</button>
+            <button class="btn btn-primary select calc" onclick="keypressed('6')">6</button>
+            <div class="clr"></div>
+            <button class="btn btn-primary select calc" onclick="keypressed('7')">7</button>
+            <button class="btn btn-primary select calc" onclick="keypressed('8')">8</button>
+            <button class="btn btn-primary select calc" onclick="keypressed('9')">9</button>
+            <div class="clr"></div>
+            <button class="btn btn-primary select calc" onclick="keypressed('.')">.</button>
+            <button class="btn btn-primary select calc" onclick="keypressed('0')">0</button>
+            <button class="btn btn-primary select calc" onclick="keypressed('<')">&lt;</button>
+        </div>
     </div>
-    <button type="button" pButton icon="fa-check" (click)="submitQuantity()" label="Submit Quantity"></button>
 
-<p-selectButton [options]="units" [(ngModel)]="unit"></p-selectButton>
+    <div class="calculator1">
+    <h1>Unit</h1>
+    <h3><p-selectButton [options]="units" [(ngModel)]="unit"></p-selectButton></h3>
+    </div>
 
 
-<br>
-<button pButton type="text" (click)="prevPage()" label="Back"></button>
-<br>
-<button pButton type="text" (click)="submitLog()" label="Submit" ></button>
+    <br>
+    <button pButton type="text" (click)="prevPage()" label="Back"></button>
+    <br>
+    <button pButton type="text" (click)="submitLog()" label="Submit" ></button>
 
 </div>
 

@@ -43,6 +43,270 @@ p {
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
 }
+
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+.keypad {
+    width: 100%;
+    border: 0px solid black;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-top-color: black;
+    border-right-color: black;
+    border-bottom-color: black;
+    border-left-color: black;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image-source: none;
+    border-image-slice: 100% 100% 100% 100%;
+    border-image-width: 1 1 1 1;
+    border-image-outset: 0 0 0 0;
+    border-image-repeat: stretch stretch;
+    display: inline-block;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {height: 450px}
+
+/* Set gray background color and 100% height */
+.sidenav {
+    padding-top: 20px;
+    background-color: #999999;
+    height: 100%;
+}
+
+a {
+    color: #FFF;
+    font-family: 'Raleway', sans-serif;
+
+}
+body {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+}
+.btn {
+    border-radius: 7px;
+    background-color:#537ea6;
+    border-color:#0066FF;
+    color: #FFF;
+    font-weight:500;
+    width: 45%;
+    height: 55px;
+    vertical-align:middle;
+    float:left;
+    margin: 5px;
+
+}
+.btn:hover {
+    border-radius: 7px;
+    background-color:#5A8FC2;
+    border-color:#0066FF;
+    color: #FFF;
+    font-weight:500;
+}
+.calc {
+    border-radius: 7px;
+    background-color:#537ea6;
+    border-color:#0066FF;
+    color: #FFF;
+    font-weight:500;
+    width: 50px;
+    height: 50px;
+    vertical-align:middle;
+    float:left;
+    margin: 5px;
+
+}
+.calc-unit {
+    border-radius: 7px;
+    background-color:#537ea6;
+    border-color:#0066FF;
+    color: #FFF;
+    font-weight:500;
+    width: auto;
+    height: 55px;
+    vertical-align:middle;
+    float:left;
+    margin: 5px;
+
+}
+.calculator {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    float:left;
+    vertical-align:middle;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.calculator1 {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    float:right;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.clr {
+    clear:both;
+}
+
+.form-control {
+    width: 30%;
+    margin: 5px;
+    border-radius: 7px;
+    border-color:#537ea6;
+}
+
+/* Set black background color, white text and some padding */
+footer {
+    background-color: #555;
+    color: white;
+    padding: 15px;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+    .sidenav {
+        height: auto;
+        padding: 15px;
+    }
+    .row.content {height:auto;}
+}
+
+
+
+.button {
+    border-radius: 7px;
+    background-color:#537ea6;
+    border-color:#0066FF;
+    color: #FFF;
+    font-weight:500;
+    width: 55px;;
+    height: 55px;
+    vertical-align:middle;
+    text-align: center;
+    border: 1px solid transparent;
+    padding: 5px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+
+
+}
+.button span:after {
+
+    position: absolute;
+    opacity: 0;
+    top: 0;
+
+    transition: 0.5s;
+    background-color: #537ea6;
+}
+
+.button:hover span {
+
+    background-color: #537ea6;
+}
+.button:hover {
+
+    background-color: #5A8FC2;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+    background-color: #5A8FC2;
+}
+#div1 {width:140px;
+    height:100px;
+    padding:0px;
+    margin:0px;
+    border:0px solid #aaaaaa;
+    vertical-align:bottom;
+}
+.verticalLine {
+    border-left: thin solid #666;
+}
+
+.navbtn {
+    text-align: right;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.navbtn img {
+    width: 60px;
+    height: 60px;
+}
+
+
+/*
+@charset "utf-8";
+!* CSS Document *!
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,600,200,300italic);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,700,600,300);
+
+h1 {
+    font-size:56px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+}
+h2 {
+    font-size:36px;
+    font-family: 'Raeway', sans-serif;
+    font-weight: 300;
+    font-style:italic;
+}
+h3 {
+    font-size: 24px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+
+}
+h4 {
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+
+}
+h5 {
+    font-size: 14px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+
+}
+h6 {
+    font-size: 14px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+
+}
+
+p {
+    font-size: 12px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+}
+
 a {
     color: #FFF;
     font-family: 'Raleway', sans-serif;
@@ -90,28 +354,28 @@ tr:nth-child(even) {
     background-color: #dddddd;
 }
 
-/* JJ's CSS Document */
-
 .navbar {
     margin-bottom: 0;
     border-radius: 0;
 }
 
-/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+!* Set height of the grid so .sidenav can be 100% (adjust as needed) *!
 .row.content {height: 450px}
 
-/* Set gray background color and 100% height */
+!* Set gray background color and 100% height *!
 .sidenav {
     padding-top: 20px;
     background-color: #999999;
     height: 100%;
 }
 
+
 .btn {
     border-radius: 7px;
-    background-color:#537ea6;
-    border-color:#0066FF;
+    background-color:#537ea6 ;
+    border-color:#0066FF ;
     color: #FFF;
+    font-family: 'Raeway', sans-serif;
     font-weight:500;
     width: 45%;
     height: 55px;
@@ -120,33 +384,38 @@ tr:nth-child(even) {
     margin: 5px;
 
 }
-.btn:hover {
-    border-radius: 7px;
-    background-color:#17a4df;
-    border-color:#0066FF;
-    color: #FFF;
-    font-weight:500;
+
+.navbtn {
+    text-align: right;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.navbtn img {
+    width: 60px;
+    height: 60px;
 }
 
 .form-control {
-    width: 30%;
+    width: 100%;
     margin: 5px;
     border-radius: 7px;
     border-color:#537ea6;
 }
 
-/* Set black background color, white text and some padding */
+!* Set black background color, white text and some padding *!
 footer {
     background-color: #555;
     color: white;
     padding: 15px;
 }
 
-/* On small screens, set height to 'auto' for sidenav and grid */
+!* On small screens, set height to 'auto' for sidenav and grid *!
 @media screen and (max-width: 767px) {
     .sidenav {
         height: auto;
         padding: 15px;
     }
     .row.content {height:auto;}
-}
+}*/
